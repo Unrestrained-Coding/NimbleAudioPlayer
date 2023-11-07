@@ -1,0 +1,8 @@
+arcade
+scipy
+numpy
+imageio
+pydub
+mutagen
+python-ffmpeg
+Pillow
