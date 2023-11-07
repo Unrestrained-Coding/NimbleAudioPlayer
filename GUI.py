@@ -42,6 +42,7 @@ class GUI(arcade.View):
         self.sound_bar_is_visible = False
         self.volume_level = 50
 
+
         self.songs = ["resources/music/Rammstein_-_Keine_Lust_63121988.wav",
                       "resources/music/follow.wav", "resources/music/Rammstein_-_Deutschland_63121881.wav"]
 
@@ -64,6 +65,8 @@ class GUI(arcade.View):
         self.slider = UISlider(value=self.volume_level, x=self.volume.left, y=self.hud_height + 5, width=120, height=40,
                                style={"normal_filled_bar": (238, 20, 223), "hovered_filled_bar": (238, 20, 223),
                                       "pressed_filled_bar": (238, 20, 223)})
+
+
         self.slider.on_change = self.set_player_volume
 
     def rebase_gui_sprites_texture(self, texture):
@@ -98,10 +101,11 @@ class GUI(arcade.View):
                 self.text.text = f"{self.cur_song_index + 1}/{len(self.songs)} - {self.songs[self.cur_song_index]}"
                 self.text.draw()
 
-        if self.hud_is_visible or self.sound_bar_is_visible:
+        if True or self.hud_is_visible or self.sound_bar_is_visible:
             arcade.draw_xywh_rectangle_filled(0, 0, self.width, self.hud_height, (0, 0, 0, 90))
             arcade.draw_line(0, self.hud_height, self.width, self.hud_height, arcade.color.BLACK, line_width=5)
             self.ui_manager.enable()
+
             self.ui_manager.draw()
 
             if self.media_player:

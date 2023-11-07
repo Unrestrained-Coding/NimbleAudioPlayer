@@ -11,9 +11,6 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
+    base_path = os.path.abspath(".")
 
-    return os.path.join(base_path, relative_path)
+    return os.path.join(ROOT_DIR, relative_path)
